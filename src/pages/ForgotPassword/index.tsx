@@ -79,7 +79,11 @@ const ForgotPassword: React.FC = () => {
       <Container>
         <Content>
           <AnimationContainer>
-            <img src={logoImg} alt="Go Barber" />
+            <img
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/726ccb19-8cdb-4565-9abc-6dc90cd8c886/dec5tqx-5945acdf-45f1-43fb-837c-de46d292ded6.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNzI2Y2NiMTktOGNkYi00NTY1LTlhYmMtNmRjOTBjZDhjODg2XC9kZWM1dHF4LTU5NDVhY2RmLTQ1ZjEtNDNmYi04MzdjLWRlNDZkMjkyZGVkNi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.lR8DHzTWO9wX9hbehFFHbmBnXHesj51v9A6EZk1TyYE"
+              alt="Go Barber"
+              style={{ width: 100 }}
+            />
             <Form ref={formRef} onSubmit={handleSubmit}>
               <h1>Recuperar Senha</h1>
 
@@ -100,7 +104,10 @@ const ForgotPassword: React.FC = () => {
             </Link>
           </AnimationContainer>
         </Content>
-        <Background />
+        <Background>
+          <h2>Don't worry,</h2>
+          <h3>An e-mail will be send to you</h3>
+        </Background>
       </Container>
     </>
   );

@@ -81,6 +81,19 @@ export const AnimationContainer = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signInBackground}) no-repeat center;
-  background-size: cover;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/de8g5j3-624e4c0a-0fb5-4f98-9974-c584d6a70023.png/v1/fill/w_276,h_350,strp/naruto_uzumaki__pyjamas__render__naruto_mobile__by_maxiuchiha22_de8g5j3-350t.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMTMyIiwicGF0aCI6IlwvZlwvODRkYzEzYjctYTJlNy00YjQ1LTgzZWMtMzExZTcyZTgyOTAwXC9kZThnNWozLTYyNGU0YzBhLTBmYjUtNGY5OC05OTc0LWM1ODRkNmE3MDAyMy5wbmciLCJ3aWR0aCI6Ijw9ODkyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kMLzm5a-R5YdkxqkidFgAjMMKugBT-sEZegWDi33k18')
+    no-repeat top center;
+  /* background-size: cover; */
+  background-color: #711a19;
+
+  h2 {
+    position: absolute;
+    top: 400px;
+    margin-left: 200px;
+  }
+  h3 {
+    position: absolute;
+    top: 440px;
+    margin-left: 200px;
+  }
 `;

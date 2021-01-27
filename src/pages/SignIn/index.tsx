@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 
 import { FormHandles } from '@unform/core';
 import { Link, useHistory } from 'react-router-dom';
+import { size } from 'polished';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
@@ -14,7 +15,13 @@ import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { Container, Background, AnimationContainer, Content } from './styles';
+import {
+  Container,
+  Background,
+  Background1,
+  AnimationContainer,
+  Content,
+} from './styles';
 
 interface SignInFormData {
   email: string;
@@ -70,11 +77,16 @@ const SignIn: React.FC = () => {
   return (
     <>
       <Container>
+        <Background1 />
         <Content>
           <AnimationContainer>
-            <img src={logoImg} alt="Go Barber" />
+            <img
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/726ccb19-8cdb-4565-9abc-6dc90cd8c886/dec5tqx-5945acdf-45f1-43fb-837c-de46d292ded6.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNzI2Y2NiMTktOGNkYi00NTY1LTlhYmMtNmRjOTBjZDhjODg2XC9kZWM1dHF4LTU5NDVhY2RmLTQ1ZjEtNDNmYi04MzdjLWRlNDZkMjkyZGVkNi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.lR8DHzTWO9wX9hbehFFHbmBnXHesj51v9A6EZk1TyYE"
+              alt="Go Barber"
+              style={{ width: 100 }}
+            />
             <Form ref={formRef} onSubmit={handleSubmit}>
-              <h1>Faça seu logon</h1>
+              <h1>Log In</h1>
 
               <Input
                 icon={FiMail}
@@ -87,19 +99,20 @@ const SignIn: React.FC = () => {
                 icon={FiLock}
                 name="password"
                 type="password"
-                placeholder="Senha"
+                placeholder="Password"
               />
 
-              <Button type="submit"> Entrar</Button>
+              <Button type="submit"> Log In</Button>
 
-              <Link to="/forgot-password">Esqueci minha senha</Link>
+              <Link to="/forgot-password">Forgot Password</Link>
             </Form>
 
             <Link to="/signup">
-              <FiLogIn size={16} /> Criar conta
+              <FiLogIn size={16} /> Sign Up
             </Link>
           </AnimationContainer>
         </Content>
+
         <Background />
       </Container>
     </>

@@ -79,15 +79,25 @@ const SignUp: React.FC = () => {
   return (
     <>
       <Container>
-        <Background />
+        <Background>
+          <h2>
+            {' '}
+            Create a free account , collect cards and battle with your favorite
+            characters !
+          </h2>
+        </Background>
         <Content>
           <AnimationContainer>
-            <img src={logoImg} alt="Go Barber" />
+            <img
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/726ccb19-8cdb-4565-9abc-6dc90cd8c886/dec5tqx-5945acdf-45f1-43fb-837c-de46d292ded6.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNzI2Y2NiMTktOGNkYi00NTY1LTlhYmMtNmRjOTBjZDhjODg2XC9kZWM1dHF4LTU5NDVhY2RmLTQ1ZjEtNDNmYi04MzdjLWRlNDZkMjkyZGVkNi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.lR8DHzTWO9wX9hbehFFHbmBnXHesj51v9A6EZk1TyYE"
+              alt="Go Barber"
+              style={{ width: 100 }}
+            />
 
             <Form ref={formRef} onSubmit={handleSubmit}>
-              <h1>Faça seu cadastro</h1>
+              <h1>Join Us</h1>
 
-              <Input icon={FiUser} name="name" type="text" placeholder="Nome" />
+              <Input icon={FiUser} name="name" type="text" placeholder="Name" />
 
               <Input
                 icon={FiMail}
@@ -100,14 +110,14 @@ const SignUp: React.FC = () => {
                 icon={FiLock}
                 name="password"
                 type="password"
-                placeholder="Senha"
+                placeholder="Password"
               />
 
-              <Button type="submit"> Cadastrar</Button>
+              <Button type="submit"> Join </Button>
             </Form>
 
             <Link to="/">
-              <FiArrowLeft size={16} /> Voltar para logon
+              <FiArrowLeft size={16} /> Back to Login
             </Link>
           </AnimationContainer>
         </Content>
