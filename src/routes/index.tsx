@@ -25,6 +25,7 @@ import EditTeam from '../pages/admin/Team/Edit';
 import EditCharacter from '../pages/admin/Characters/Edit';
 import AdminSignIn from '../pages/admin/SignIn';
 import Users from '../pages/admin/Users';
+import Cards from '../pages/Cards';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -34,6 +35,7 @@ const Routes: React.FC = () => (
     <Route path="/reset-password" component={ResetPassword} />
 
     <Route path="/dashboard" component={Dashboard} isPrivate />
+    <Route path="/cards" component={Cards} isPrivate />
     <Route path="/profile" component={Profile} isPrivate />
 
     <Route path="/admin/" exact component={AdminSignIn} />
