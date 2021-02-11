@@ -1,13 +1,9 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
-import uchiha from '../../assets/uchiha_bg.png';
 
 export const Container = styled.div`
-  overflow-y: hidden;
   overflow-x: hidden;
   height: 100vh;
-  background: url(${uchiha}) no-repeat top center;
-  background-color: #191921;
+  background-color: #ff9000;
 `;
 
 export const Header = styled.header`
@@ -65,10 +61,84 @@ export const Profile = styled.div`
 
 export const Content = styled.main`
   max-width: 1120px;
-  height: 100vh;
+  min-height: 100vh;
   margin: 32px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 15px;
+`;
+
+export const Filters = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+  margin: 32px auto;
+
+  a {
+    text-decoration: none;
+    color: #711a19;
+    max-width: 50px;
+  }
+
+  h3 {
+    margin-bottom: 64px;
+    font-size: 10vh;
+    /* color: #711a19; */
+    text-shadow: 1px 1px black;
+  }
+
+  div {
+    display: flex;
+  }
+`;
+
+export const FilterGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1120px;
+`;
+
+export const Search = styled.div`
+  input {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    color: #666360;
+
+    &::placeholder {
+      text-align: center;
+      color: #666360;
+    }
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+    margin-left: 5px;
+    color: #711a19;
+  }
+`;
+
+export const Order = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  label {
+    font-size: 2.5vh;
+    margin-right: 5px;
+    line-height: 35px;
+  }
+
+  select {
+    min-height: 20px;
+    border: 0;
+    /* border-radius: 5px; */
+    font-size: 3vh;
+    color: white;
+    background-color: #ff9000;
+    cursor: pointer;
+  }
 `;
 
 export const List = styled.ul`
@@ -84,11 +154,6 @@ export const List = styled.ul`
     min-width: 30px;
     max-width: 50px;
     cursor: pointer;
-
-    a {
-      text-decoration: none;
-      color: #f4ede8;
-    }
     img {
       position: absolute;
       right: 90%;
@@ -110,4 +175,20 @@ export const Background = styled.div`
   z-index: -1;
   position: absolute;
   overflow-y: hidden;
+`;
+
+export const Pag = styled.div`
+  max-width: 300px;
+  margin-left: 40%;
+  border-radius: 5px;
+`;
+
+export const NotFound = styled.div`
+  position: absolute;
+  top: 60%;
+  left: 35%;
+  text-align: center;
+  h5 {
+    font-size: 3vh;
+  }
 `;
