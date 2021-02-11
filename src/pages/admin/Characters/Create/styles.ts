@@ -91,55 +91,6 @@ export const Content = styled.main`
   }
 `;
 
-export const Preview = styled.div`
-  display: grid;
-  margin-bottom: 10px;
-
-  img {
-    width: auto;
-    height: 250px;
-  }
-
-  a {
-    background-color: #ff9000;
-    text-decoration: none;
-    border-radius: 5%;
-    padding: 1%;
-    color: white;
-  }
-`;
-
-export const Character = styled.div`
-  display: grid;
-  grid-template-columns: 0.7fr;
-  /* grid-template-rows: 10px; */
-
-  div {
-    text-align: right;
-
-    span {
-      background-color: #ff9000;
-      padding: 3%;
-      border-radius: 15%;
-    }
-  }
-  img {
-    width: auto;
-    height: 270px;
-  }
-`;
-
-export const Stat = styled.div`
-  div {
-    display: flex;
-    justify-content: space-between;
-
-    span {
-      text-align: right;
-    }
-  }
-`;
-
 export const AddOns = styled.section`
   display: grid;
   max-width: 1120px;

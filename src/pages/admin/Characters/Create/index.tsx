@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 import * as Yup from 'yup';
@@ -13,9 +14,6 @@ import {
   HeaderContent,
   Profile,
   Content,
-  Preview,
-  Character,
-  Stat,
   AddOns,
   On,
   List,
@@ -27,9 +25,11 @@ import getValidationErrors from '../../../../utils/getValidationErrors';
 import Button from '../../../../components/Button';
 import api from '../../../../services/api';
 import Select from '../../../../components/Select';
+import Card from '../../../../components/Card';
 
 interface CreateCharacterForm {
   render: string;
+  rendermarg: number;
   type: string;
   name: string;
   desc: string;
@@ -46,6 +46,7 @@ interface CreateCharacterForm {
 interface Character {
   id: string;
   render: string;
+  rendermarg: number;
   type: string;
   name: string;
   desc: string;
@@ -86,6 +87,7 @@ const CreateCharacter: React.FC = () => {
 
   const { user, signOut } = useAuth();
 
+  const [rendermargP, setRendermargP] = useState(0);
   const [renderP, setRenderP] = useState('');
   const [typeP, setTypeP] = useState('');
   const [nameP, setNameP] = useState('');
@@ -265,6 +267,7 @@ const CreateCharacter: React.FC = () => {
     character,
     selectedTeam,
     selectedAft,
+    history,
   ]);
 
   const handlePreview = useCallback(() => {
@@ -279,6 +282,8 @@ const CreateCharacter: React.FC = () => {
     const stamina = formRef.current?.getFieldValue('stamina');
     const willpower = formRef.current?.getFieldValue('willpower');
     const render = formRef.current?.getFieldValue('render');
+    const rendermarg = parseInt(formRef.current?.getFieldValue('rendermarg'));
+    setRendermargP(rendermarg);
     setTypeP(type);
     setNameP(name);
     setRenderP(render);
@@ -402,27 +407,20 @@ const CreateCharacter: React.FC = () => {
 
       {!character && (
         <Content>
-          <Preview>
-            <h2>Preview</h2>
-            <Character>
-              <div>
-                <span>{powerP}</span>
-              </div>
-              <img src={renderP} alt="" />
-            </Character>
-            <Stat>
-              <div>
-                <span>
-                  <i> {typeP}</i>
-                </span>
-                <span> {nameP}</span>
-              </div>
-            </Stat>
-          </Preview>
-
+          <Card
+            aft_pcolor="#711a19"
+            aft_scolor="#000"
+            aft_icon="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/726ccb19-8cdb-4565-9abc-6dc90cd8c886/deddum9-62e6d404-36ee-43d2-a9d5-7b8555a0cca6.png/v1/fill/w_18,h_18,strp/akatsuki_symbol_by_zero1533_deddum9-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xOCIsInBhdGgiOiJcL2ZcLzcyNmNjYjE5LThjZGItNDU2NS05YWJjLTZkYzkwY2Q4Yzg4NlwvZGVkZHVtOS02MmU2ZDQwNC0zNmVlLTQzZDItYTlkNS03Yjg1NTVhMGNjYTYucG5nIiwid2lkdGgiOiI8PTE4In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.vqwNDCnoxwcmHgPcAekc0a3AgAqrZ0bF0iBtLhM0kVE"
+            char_image={renderP}
+            char_name={nameP}
+            char_type={typeP}
+            char_power={powerP}
+            render_marg={rendermargP}
+          />
           <Form ref={formRef} onSubmit={handleSubmit}>
             <div>
               <Input name="render" type="text" placeholder="Render" />
+              <Input name="rendermarg" type="text" placeholder="Margin" />
               <Input name="type" type="text" placeholder="Type" />
               <Input name="name" type="text" placeholder="Name" />
               <Input name="desc" type="text" placeholder="Desc" />
